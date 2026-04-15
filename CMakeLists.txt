@@ -9,7 +9,10 @@ set(SOURCES
 # Add the library target and link the sources
 add_library(${TARGET} ${SOURCES})
 
+if(MICRO_ECC_EMB)
 target_link_libraries(uECC PUBLIC MemoryUtilities)
+endif()
+
 # Add the include directory
 target_include_directories(${TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 # Install the library
